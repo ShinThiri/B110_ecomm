@@ -1,0 +1,33 @@
+create table product(
+    productID int PRIMARY KEY AUTO_INCREMENT,
+    productName varchar (120),
+    category int, 
+    price float,
+    description varchar (200),
+    qty int,
+    imgPath varchar(150)
+    );
+
+
+CREATE TABLE category(
+    catID int PRIMARY key AUTO_INCREMENT,
+    catName varchar(200),
+    remark varchar (200)
+    );
+
+
+foreing key addd in orders table
+------------------
+ALTER TABLE orders 
+add FOREIGN KEY 
+(userId) 
+REFERENCES users(userId);
+
+
+
+ALTER TABLE orderdetails
+add FOREIGN KEY
+(productId)
+REFERENCES
+products(productId);
+

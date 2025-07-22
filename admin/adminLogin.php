@@ -1,11 +1,19 @@
 <?php
 
+if(isset($_POST['login'])) // $_POST is super global array
+
+{
+   $email = $_POST['email']; // retrieve email valuse of users 
+   $password = $_POST['password']; // retrieve password of users
+
+
+//    echo "email is $email and Password you type is $password";
+
+
+}
+
+
 ?>
-
-
-
-
-
 
 
 
@@ -30,15 +38,16 @@
             require_once("navbarcopy.php")
             ?>
 
+    <div class="mb-3"></div>
     </div>
     <div class="row">
         <div class="col-md-6 mx-auto py-5" >
-        <form action="adminLogin.php " method="post">  
-                <label for="" class=" form-label"></label>
+        <form action=" <?php echo $_SERVER['PHP_SELF'];?> " method="post">  
+                <label for="" class=" form-label">Email</label>
                 <input type="email" class="form-control" name="email">
-            </div>
-        <div class="mb-3">
-                <label for =""></label>
+            </div><br><br>
+        <div class="col-md-6 mx-auto py-5">
+                <label for ="">Password</label>
                 <input type="password" class="form-control" name="password">
 
         </div>
